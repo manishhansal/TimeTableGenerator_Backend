@@ -99,6 +99,11 @@ app.post("/timeTable", async (req, res) => {
   }
 });
 
+app.delete('/clearTable', async(req, res) => {
+    let resp = await Timetable.remove()
+    res.send(resp)
+})
+
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
 });
